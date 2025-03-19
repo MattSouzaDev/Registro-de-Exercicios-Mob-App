@@ -9,7 +9,7 @@ export default function StackNavigator() {
   return (
     <Stack.Navigator>
       <Stack.Screen name="Página Inicial" component={HomeScreen} />
-      <Stack.Screen name="Histórico de Atividades" component={HistoryScreen} />
+      <Stack.Screen name="History" component={HistoryScreen} />
     </Stack.Navigator>
   );
 }
