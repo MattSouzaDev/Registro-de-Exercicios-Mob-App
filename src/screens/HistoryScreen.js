@@ -5,7 +5,6 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 export default function HistoryScreen() {
   const [history, setHistory] = useState([]);
 
-  // Carrega o histórico ao abrir a tela
   useEffect(() => {
     loadHistory();
   }, []);
@@ -21,7 +20,6 @@ export default function HistoryScreen() {
     }
   };
 
-  // Função para limpar o histórico
   const clearHistory = async () => {
     await AsyncStorage.removeItem("workoutHistory");
     setHistory([]);
@@ -58,7 +56,6 @@ export default function HistoryScreen() {
   );
 }
 
-// Estilos
 const styles = StyleSheet.create({
   container: {
     flex: 1,
