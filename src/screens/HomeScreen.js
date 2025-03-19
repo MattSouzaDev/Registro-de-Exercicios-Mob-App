@@ -11,23 +11,21 @@ import {
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
 export default function HomeScreen({ navigation }) {
-  const [exercises, setExercises] = useState([]); // Exercícios do treino atual
-  const [name, setName] = useState(""); // Nome do exercício
-  const [duration, setDuration] = useState(""); // Duração do exercício
+  const [exercises, setExercises] = useState([]); 
+  const [name, setName] = useState(""); 
+  const [duration, setDuration] = useState(""); 
 
-  // Adiciona um exercício à lista
   const addExercise = () => {
     if (name.trim() && duration.trim()) {
       const newExercise = { id: Date.now().toString(), name, duration };
       setExercises([...exercises, newExercise]);
-      setName(""); // Limpa os campos
+      setName(""); 
       setDuration("");
     } else {
       Alert.alert("Erro", "Preencha todos os campos!");
     }
   };
 
-  // Finaliza o treino e salva no histórico
   const completeWorkout = async () => {
     if (exercises.length === 0) {
       Alert.alert(
@@ -36,18 +34,18 @@ export default function HomeScreen({ navigation }) {
       );
       return;
     }
-
+    
     const now = new Date();
-    const dateKey = now.toISOString(); // Chave única (YYYY-MM-DDTHH:MM:SSZ)
+    const dateKey = now.toISOString();
     const newWorkout = { date: dateKey, exercises };
 
     try {
       const historyData = await AsyncStorage.getItem("workoutHistory");
       const history = historyData ? JSON.parse(historyData) : [];
-      history.push(newWorkout); // Adiciona o treino ao histórico
+      history.push(newWorkout); 
       await AsyncStorage.setItem("workoutHistory", JSON.stringify(history));
 
-      setExercises([]); // Limpa os exercícios atuais
+      setExercises([]); 
       Alert.alert("Sucesso", "Treino finalizado e salvo no histórico!");
     } catch (error) {
       Alert.alert("Erro", "Não foi possível salvar o treino.");
@@ -91,7 +89,6 @@ export default function HomeScreen({ navigation }) {
         color="green"
       />
 
-      {/* Botão para ver o histórico */}
       <Button
         title="Ver Histórico"
         onPress={() => navigation.navigate("History")}
@@ -101,7 +98,6 @@ export default function HomeScreen({ navigation }) {
   );
 }
 
-// Estilos
 const styles = StyleSheet.create({
   container: {
     flex: 1,
