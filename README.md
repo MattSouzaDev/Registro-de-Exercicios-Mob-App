@@ -1,5 +1,5 @@
 
-Participantes: Vitor Della Flora Lunardelli, Kauan Matheus Vailante de Lima, Felipe Dos Santos Torejian. Matheus
+Participantes: Vitor Della Flora Lunardelli, Kauan Matheus Vailante de Lima, Felipe Dos Santos Torejian e Matheus Souza.
 
 
 # Registro-de-Exercicios-Mob-App
