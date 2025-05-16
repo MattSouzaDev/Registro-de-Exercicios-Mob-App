@@ -68,8 +68,7 @@ export default function Historico() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 20,
-    backgroundColor: "#fff",
+    padding: 20
   },
   title: {
     fontSize: 22,
@@ -97,6 +96,6 @@ const styles = StyleSheet.create({
   },
   noExercises: {
     fontSize: 14,
-    color: 'red'
+    color: 'black'
   }
 });

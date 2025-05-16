@@ -89,9 +89,6 @@ const styles = StyleSheet.create({
     flex: 1,
     padding: 20
   },
-  baseText: {
-    color: "red"
-  },
   title: {
     fontSize: 22,
     fontWeight: "bold",
